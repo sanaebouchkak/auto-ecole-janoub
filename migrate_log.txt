@@ -1,0 +1,178 @@
+﻿
+  Dropping all tables  89.46ms DONE
+
+   INFO  Preparing database.  
+
+  Creating migration table  11.39ms DONE
+
+   INFO  Running migrations.  
+
+  0000_01_01_000000_create_roles_table  23.19ms DONE
+  0001_01_01_000000_create_users_table  84.67ms DONE
+  0001_01_01_000001_create_cache_table  45.19ms DONE
+  0001_01_01_000002_create_jobs_table  52.05ms DONE
+  2026_03_05_122027_create_candidats_table  61.19ms DONE
+  2026_03_05_122027_create_formations_table  8.21ms DONE
+  2026_03_05_122027_create_moniteurs_table  43.85ms DONE
+  2026_03_05_122028_create_paiements_table  47.92ms DONE
+  2026_03_05_122028_create_reservations_table  36.46ms FAIL
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1005 Can't create table `auto_ecole_app`.`reservations` (errno: 150 "Foreign key constraint is incorrectly formed") (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: auto_ecole_app, SQL: alter table `reservations` add constraint `reservations_seance_id_foreign` foreign key (`seance_id`) references `seances` (`id`) on delete cascade)
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+    834Ôûò             $exceptionType = $this->isUniqueConstraintError($e)
+    835Ôûò                 ? UniqueConstraintViolationException::class
+    836Ôûò                 : QueryException::class;
+    837Ôûò 
+  Ô×£ 838Ôûò             throw new $exceptionType(
+    839Ôûò                 $this->getNameWithReadWriteType(),
+    840Ôûò                 $query,
+    841Ôûò                 $this->prepareBindings($bindings),
+    842Ôûò                 $e,
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+      PDOException::("SQLSTATE[HY000]: General error: 1005 Can't create table `auto_ecole_app`.`reservations` (errno: 150 "Foreign key constraint is incorrectly formed")")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+      PDOStatement::execute()
+
+  3   vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+      Illuminate\Database\Connection::Illuminate\Database\{closure}("alter table `reservations` add constraint `reservations_seance_id_foreign` foreign key (`seance_id`) references `seances` (`id`) on delete cascade", [])
+
+  4   vendor\laravel\framework\src\Illuminate\Database\Connection.php:794
+      Illuminate\Database\Connection::runQueryCallback("alter table `reservations` add constraint `reservations_seance_id_foreign` foreign key (`seance_id`) references `seances` (`id`) on delete cascade", [], Object(Closure))
+
+  5   vendor\laravel\framework\src\Illuminate\Database\Connection.php:573
+      Illuminate\Database\Connection::run("alter table `reservations` add constraint `reservations_seance_id_foreign` foreign key (`seance_id`) references `seances` (`id`) on delete cascade", [], Object(Closure))
+
+  6   vendor\laravel\framework\src\Illuminate\Database\Schema\Blueprint.php:121
+      Illuminate\Database\Connection::statement("alter table `reservations` add constraint `reservations_seance_id_foreign` foreign key (`seance_id`) references `seances` (`id`) on delete cascade")
+
+  7   vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php:686
+      Illuminate\Database\Schema\Blueprint::build()
+
+  8   vendor\laravel\framework\src\Illuminate\Database\Schema\Builder.php:506
+      Illuminate\Database\Schema\Builder::build(Object(Illuminate\Database\Schema\Blueprint))
+
+  9   vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php:363
+      Illuminate\Database\Schema\Builder::create("reservations", Object(Closure))
+
+  10  database\migrations\2026_03_05_122028_create_reservations_table.php:7
+      Illuminate\Support\Facades\Facade::__callStatic("create")
+
+  11  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:517
+      Illuminate\Database\Migrations\Migration@anonymous\C:\Users\ycode\OneDrive\Bureau\projet_telechargement\auto-ecole-app\database\migrations\2026_03_05_122028_create_reservations_table.php:5$11b::up()
+
+  12  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:442
+      Illuminate\Database\Migrations\Migrator::runMethod(Object(Illuminate\Database\MySqlConnection), Object(Illuminate\Database\Migrations\Migration@anonymous\C:\Users\ycode\OneDrive\Bureau\projet_telechargement\auto-ecole-app\database\migrations\2026_03_05_122028_create_reservations_table.php:5$11b), "up")
+
+  13  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:451
+      Illuminate\Database\Migrations\Migrator::Illuminate\Database\Migrations\{closure}()
+
+  14  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:253
+      Illuminate\Database\Migrations\Migrator::runMigration(Object(Illuminate\Database\Migrations\Migration@anonymous\C:\Users\ycode\OneDrive\Bureau\projet_telechargement\auto-ecole-app\database\migrations\2026_03_05_122028_create_reservations_table.php:5$11b), "up")
+
+  15  vendor\laravel\framework\src\Illuminate\Console\View\Components\Task.php:41
+      Illuminate\Database\Migrations\Migrator::Illuminate\Database\Migrations\{closure}()
+
+  16  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:814
+      Illuminate\Console\View\Components\Task::render("2026_03_05_122028_create_reservations_table", Object(Closure))
+
+  17  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:253
+      Illuminate\Database\Migrations\Migrator::write("Illuminate\Console\View\Components\Task", "2026_03_05_122028_create_reservations_table", Object(Closure))
+
+  18  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:211
+      Illuminate\Database\Migrations\Migrator::runUp("C:\Users\ycode\OneDrive\Bureau\projet_telechargement\auto-ecole-app\database\migrations/2026_03_05_122028_create_reservations_table.php")
+
+  19  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:138
+      Illuminate\Database\Migrations\Migrator::runPending([])
+
+  20  vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php:116
+      Illuminate\Database\Migrations\Migrator::run([])
+
+  21  vendor\laravel\framework\src\Illuminate\Database\Migrations\Migrator.php:671
+      Illuminate\Database\Console\Migrations\MigrateCommand::Illuminate\Database\Console\Migrations\{closure}()
+
+  22  vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php:109
+      Illuminate\Database\Migrations\Migrator::usingConnection(Object(Closure))
+
+  23  vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\MigrateCommand.php:88
+      Illuminate\Database\Console\Migrations\MigrateCommand::runMigrations()
+
+  24  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      Illuminate\Database\Console\Migrations\MigrateCommand::handle()
+
+  25  vendor\laravel\framework\src\Illuminate\Container\Util.php:43
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+  26  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:96
+      Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+
+  27  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:35
+      Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Object(Closure))
+
+  28  vendor\laravel\framework\src\Illuminate\Container\Container.php:799
+      Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), [])
+
+  29  vendor\laravel\framework\src\Illuminate\Console\Command.php:211
+      Illuminate\Container\Container::call()
+
+  30  vendor\symfony\console\Command\Command.php:341
+      Illuminate\Console\Command::execute(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+
+  31  vendor\laravel\framework\src\Illuminate\Console\Command.php:180
+      Symfony\Component\Console\Command\Command::run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+
+  32  vendor\laravel\framework\src\Illuminate\Console\Concerns\CallsCommands.php:68
+      Illuminate\Console\Command::run(Object(Symfony\Component\Console\Input\ArrayInput), Object(Illuminate\Console\OutputStyle))
+
+  33  vendor\laravel\framework\src\Illuminate\Console\Concerns\CallsCommands.php:29
+      Illuminate\Console\Command::runCommand("migrate", ["migrate"], Object(Illuminate\Console\OutputStyle))
+
+  34  vendor\laravel\framework\src\Illuminate\Database\Console\Migrations\FreshCommand.php:81
+      Illuminate\Console\Command::call("migrate", [])
+
+  35  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:36
+      Illuminate\Database\Console\Migrations\FreshCommand::handle()
+
+  36  vendor\laravel\framework\src\Illuminate\Container\Util.php:43
+      Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+
+  37  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:96
+      Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+
+  38  vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php:35
+      Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Object(Closure))
+
+  39  vendor\laravel\framework\src\Illuminate\Container\Container.php:799
+      Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), [])
+
+  40  vendor\laravel\framework\src\Illuminate\Console\Command.php:211
+      Illuminate\Container\Container::call()
+
+  41  vendor\symfony\console\Command\Command.php:341
+      Illuminate\Console\Command::execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+
+  42  vendor\laravel\framework\src\Illuminate\Console\Command.php:180
+      Symfony\Component\Console\Command\Command::run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+
+  43  vendor\symfony\console\Application.php:1117
+      Illuminate\Console\Command::run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  44  vendor\symfony\console\Application.php:356
+      Symfony\Component\Console\Application::doRunCommand(Object(Illuminate\Database\Console\Migrations\FreshCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  45  vendor\symfony\console\Application.php:195
+      Symfony\Component\Console\Application::doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  46  vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php:198
+      Symfony\Component\Console\Application::run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  47  vendor\laravel\framework\src\Illuminate\Foundation\Application.php:1235
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+  48  artisan:16
+      Illuminate\Foundation\Application::handleCommand(Object(Symfony\Component\Console\Input\ArgvInput))
+
