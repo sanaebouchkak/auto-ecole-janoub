@@ -332,18 +332,18 @@
           <div class="cp-info">
             <div class="cp-info-item">
               <span class="cp-info-label">Adresse</span>
-              <span class="cp-info-val">12 Rue de la Conduite<br>75001 Paris, France</span>
+              <span class="cp-info-val">12 Rue de la Conduite<br>ASFI, MAROC</span>
             </div>
             <div class="cp-info-item">
               <span class="cp-info-label">Téléphone</span>
               <span class="cp-info-val">
-                <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+                <a href="tel:+212522123456">+212 6 22 12 34 56</a>
               </span>
             </div>
             <div class="cp-info-item">
               <span class="cp-info-label">Email</span>
               <span class="cp-info-val">
-                <a href="mailto:contact@driverschool.fr">contact@driverschool.fr</a>
+                <a href="mailto:contact@driverschool.fr">contact@autoecoleJANOUB.Mc</a>
               </span>
             </div>
             <div class="cp-info-item">
@@ -386,7 +386,7 @@
                 <input
                   type="email" id="email" name="email"
                   class="cp-input @error('email') is-invalid @enderror"
-                  placeholder="jean@exemple.fr"
+                  placeholder="jean@exemple.maroc"
                   value="{{ old('email') }}" required
                 >
                 @error('email')<div class="cp-error">{{ $message }}</div>@enderror
@@ -399,7 +399,7 @@
                 <input
                   type="tel" id="phone" name="phone"
                   class="cp-input"
-                  placeholder="+33 6 00 00 00 00"
+                  placeholder="+212 6 00 00 00 00"
                   value="{{ old('phone') }}"
                 >
               </div>
