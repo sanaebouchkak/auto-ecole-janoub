@@ -1,0 +1,9 @@
+# https://docs.railway.com/reference/config-as-code
+# Prefer: Networking → public domain → target port = $PORT (often 8080). Entrypoint also binds :9000 when PORT≠9000 for mis-set 9000 targets.
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/up"
+healthcheckTimeout = 300
